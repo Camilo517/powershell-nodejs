@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<!--Reponsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="shortcut icon" type="image/x-icon" href="icon.ico">
+    <title>Camilo - Aplicación ISO</title>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules\datatables.net-bs4\css\dataTables.bootstrap4.css">
+	<!-- Mensaje bienvenida -->
+	<div class="alert alert-info">
+		<strong>Bienvenido</strong>&#x1F680;
+	</div>	
+		<!-- Refrescar la pagina -->
+		<script type="text/javascript">
+			function refreshPage(){
+				if(confirm("¿Estas seguro de que quieres refrescar la aplicacion?")){
+					location.reload();
+				}
+			}
+		</script>
+	<!-- Estilo -->
+    <style>
+      .top-buffer {
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row top-buffer">
+        <div class="col-lg-10 mx-auto">
+		<input id="computerName" type="text" class="form-control" placeholder="Nombre del ordenador">
+        <div class="input-group">
+			<span class="btn-group">
+				<button id="getDisk" class="btn btn-primary" type="button">RED</button>
+				<button id="getDisk1" class="btn btn-primary" type="button">DISCO</button>
+				<button id="getDisk2" class="btn btn-primary" type="button">PROCESOS</button>
+				<button id="getDisk3" class="btn btn-primary" type="button">PROGRAMAS INSTALADOS</button>
+			</span>
+        </div>
+		
+		
+		</br>
+		
+		<div class="input-group">
+		<input id="ip" type="text" class="form-control" placeholder="Introduce la ip o dominio">
+		<input id="nombre1" type="text" class="form-control" placeholder="Nombre del archivo con su extension">
+		<button id="ping" class="btn btn-primary" type="button">Ping</button>
+		 </div>
+		
+		</br>
+		
+		<div class="input-group">
+		<input id="command" type="text" class="form-control" placeholder="Introduce el comando que quieras cargar">
+		<input id="nombre" type="text" class="form-control" placeholder="Nombre del archivo con su extension">
+		<button id="command1" class="btn btn-primary" type="button">Ejecutar</button>
+		 </div>
+		
+		</br>
+		
+		<div class="input-group">
+		<input id="origen" type="text" class="form-control" placeholder="Nombre del archivo">
+		<input id="destino" type="text" class="form-control" placeholder="Ruta destino">
+		<button id="copy" class="btn btn-primary" type="button">Copiar</button>
+		 </div>
+		
+		</br>
+		
+		<div class="input-group">
+		<input id="origenc" type="text" class="form-control" placeholder="Ruta del archivo">
+		<input id="destinoc" type="text" class="form-control" placeholder="Nombre del archivo.zip">
+		<button id="comprimir" class="btn btn-primary" type="button">Comprimir</button>
+		 </div>
+		
+		</br>
+		
+		<div class="input-group">
+		<input id="ip5" type="text" class="form-control" placeholder="Ip del equipo">
+		<button id="ssh" class="btn btn-primary" type="button">Conectarte equipo</button>
+		 </div>
+		
+        </div>
+			<p><button id="Refresh" value="Refrescar pagina" onclick='refreshPage()' class="btn btn-warning" type="button">Refrescar</button>
+			<span class="input-group-btn">
+			<button id="test" class="btn btn-warning" type="button">test</button>
+			</span>
+		</div>
+		
+     <!-- Pintado de la tablas -->
+		<div class="row justify-content-center top-buffer">
+		<table id="output" class="table table-striped table-bordered" cellspacing="0"></table>
+		</div>
+    </div>
+  </body>
+  <script>
+    require('./renderer.js')
+  </script>
+</html>
